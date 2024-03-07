@@ -1,0 +1,64 @@
+%==============================================================================
+% Sjabloon onderzoeksvoorstel bachproef
+%==============================================================================
+% Gebaseerd op document class `hogent-article'
+% zie <https://github.com/HoGentTIN/latex-hogent-article>
+
+% Voor een voorstel in het Engels: voeg de documentclass-optie [english] toe.
+% Let op: kan enkel na toestemming van de bachelorproefcoördinator!
+\documentclass{hogent-article}
+
+% Invoegen bibliografiebestand
+\addbibresource{voorstel.bib}
+
+% Informatie over de opleiding, het vak en soort opdracht
+% \studyprogramme{Professionele bachelor toegepaste informatica}
+% \course{Bachelorproef}
+% \assignmenttype{Onderzoeksvoorstel}
+% Voor een voorstel in het Engels, haal de volgende 3 regels uit commentaar
+\studyprogramme{Bachelor of applied computer science}
+\course{Bachelor thesis}
+\assignmenttype{Research proposal}
+
+\academicyear{2023-2024} % TODO: pas het academiejaar aan
+
+% TODO: Werktitel
+\title{Sustainability in Continuous Integration en Deployment-processes: a comparative analysis and proof of concept}
+
+% TODO: Studentnaam en emailadres invullen
+\author{Robbe Cherlet}
+\email{robbe.cherlet@student.hogent.be}
+
+% TODO: Geef de co-promotor op
+\supervisor[Co-promotor]{J. Delamper (Wolters Kluwer, \href{mailto:jan.delamper@wolterskluwer.com}{jan.delamper@wolterskluwer.com})}
+
+% Binnen welke specialisatierichting uit 3TI situeert dit onderzoek zich?
+% Kies uit deze lijst:
+%
+% - Mobile \& Enterprise development
+% - AI \& Data Engineering
+% - Functional \& Business Analysis
+% - System \& Network Administrator
+% - Mainframe Expert
+% - Als het onderzoek niet past binnen een van deze domeinen specifieer je deze
+%   zelf
+%
+\specialisation{System \& Network Administrator}
+\keywords{Continuous Integration, sustainability}
+
+\begin{document}
+
+\begin{abstract}
+With the current global warming and high energy prices, companies are knocking at the door to save on resources. This study conducts a comparative analysis, researching existing CI/CD frameworks, and explores strategies for enhancing their eco-friendliness. Focusing on the CI/CD infrastructure at Wolters Kluwer, the research evaluates the environmental impact of current processes and proposes innovative approaches to make CI/CD more sustainable. Through a proof of concept, the thesis implements and assesses these strategies, aiming to contribute insights into the practical application of green computing principles in the software development life cycle. The result will not only offer valuable perspectives for the IT industry but also underline the importance of integrating environmental considerations into the core of CI/CD practices for a more sustainable technological future.
+  
+\end{abstract}
+
+\tableofcontents
+
+% De hoofdtekst van het voorstel zit in een apart bestand, zodat het makkelijk
+% kan opgenomen worden in de bijlagen van de bachelorproef zelf.
+\input{voorstel-inhoud}
+
+\printbibliography[heading=bibintoc]
+
+\end{document}
