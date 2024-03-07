@@ -1,51 +1,39 @@
 %---------- Inleiding ---------------------------------------------------------
 
-% TODO: Is dit voorstel gebaseerd op een paper van Research Methods die je
-% vorig jaar hebt ingediend? Heb je daarbij eventueel samengewerkt met een
-% andere student?
-% Zo ja, haal dan de tekst hieronder uit commentaar en pas aan.
+\section{Introduction}%
+\label{sec:introduction}
+In the world of software development, the optimization of Continuous Integration and Deployment (CI/CD) processes has become a decisive concern for organizations striving to maintain efficiency and sustainability. This bachelor's thesis focuses on a concrete problem situation within a company context, with the center of attention on a case study.
 
-%\paragraph{Opmerking}
+The target audience for this research encompasses IT professionals, especially those who are engaged in CI/CD processes. By focusing this research on this specific group, it aims to provide insights and solutions to system administrators who already have knowledge of the CI/CD world.
 
-% Dit voorstel is gebaseerd op het onderzoeksvoorstel dat werd geschreven in het
-% kader van het vak Research Methods dat ik (vorig/dit) academiejaar heb
-% uitgewerkt (met medesturent VOORNAAM NAAM als mede-auteur).
-% 
+The case study guiding this research is Wolters Kluwer Financial Services FRR. It's an organization grappling with challenges related to resource optimization, efficiency, and environmental impact within their CI/CD infrastructure, TeamCity. The company is looking for more sustainable and resource-friendly solutions due to bad configurations in the past.
 
-\section{Inleiding}%
-\label{sec:inleiding}
+The central research question steering this thesis is: "How can CI/CD processes be optimized to make them more environmentally sustainable while maintaining efficiency
+and resource optimization?"
 
-Waarover zal je bachelorproef gaan? Introduceer het thema en zorg dat volgende zaken zeker duidelijk aanwezig zijn:
+Through a thorough analysis and proof-of-concept, the aim is to contribute practical solutions to the identified problem. The goal is not only to enhance CI/CD efficiency but also to align this process with principles of environmental sustainability.
 
-\begin{itemize}
-  \item kaderen thema
-  \item de doelgroep
-  \item de probleemstelling en (centrale) onderzoeksvraag
-  \item de onderzoeksdoelstelling
-\end{itemize}
-
-Denk er aan: een typische bachelorproef is \textit{toegepast onderzoek}, wat betekent dat je start vanuit een concrete probleemsituatie in bedrijfscontext, een \textbf{casus}. Het is belangrijk om je onderwerp goed af te bakenen: je gaat voor die \textit{ene specifieke probleemsituatie} op zoek naar een goede oplossing, op basis van de huidige kennis in het vakgebied.
-
-De doelgroep moet ook concreet en duidelijk zijn, dus geen algemene of vaag gedefinieerde groepen zoals \emph{bedrijven}, \emph{developers}, \emph{Vlamingen}, enz. Je richt je in elk geval op it-professionals, een bachelorproef is geen populariserende tekst. Eén specifiek bedrijf (die te maken hebben met een concrete probleemsituatie) is dus beter dan \emph{bedrijven} in het algemeen.
-
-Formuleer duidelijk de onderzoeksvraag! De begeleiders lezen nog steeds te veel voorstellen waarin we geen onderzoeksvraag terugvinden.
-
-Schrijf ook iets over de doelstelling. Wat zie je als het concrete eindresultaat van je onderzoek, naast de uitgeschreven scriptie? Is het een proof-of-concept, een rapport met aanbevelingen, \ldots Met welk eindresultaat kan je je bachelorproef als een succes beschouwen?
-
+The success of this research will be gauged by the impact our recommendations have on Wolters Kluwer's CI/CD processes. Whether indicated through a proof-of-concept implementation, a comprehensive report featuring actionable recommendations, or other practical outcomes, the benchmark for success lies in positively transforming CI/CD practices toward sustainability.
 %---------- Stand van zaken ---------------------------------------------------
 
-\section{Literatuurstudie}%
-\label{sec:literatuurstudie}
+\section{State-of-the-art}%
+\label{sec:state-of-the-art}
 
-Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
+In examining the present landscape of software automation, the breadth of available options mirrors the vastness of an ocean. \autocite{King2019} The ever-evolving landscape of automation is complex, and if you want to utilize all possible solutions, you may be busy for a long while. \autocite{King2019} This literature review aims to provide an overview of the current state of CI/CD processes, drawing extensively from professional literature.
 
-Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
+\subsection{CI/CD Infrastructure and Efficiency}
 
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Hykes2013}! Denk zeker goed na welke werken je refereert en waarom.
+It all initiates from the outset: which tool shall be utilized? It is important to consider multiple factors, like features relevant to your needs, the ease of use, scalability and cost of the tool. Furthermore, it is important to break the pipeline down into multiple phases, this can dismantle bottlenecks and accelerates the delivery process. The article of \textcite{Dahunsi2023} further delves into the significance of automated testing and Quality Assurance, paralleling builds for scalability, implementing monitoring and feedback loops, conducting security checks and embracing a culture of continuous improvement using the Deming Cycle. The journey to an optimal CI/CD pipeline is a perpetual quest in the ever-evolving landscape of DevOps.
 
-Draag zorg voor correcte literatuurverwijzingen! Een bronvermelding hoort thuis \emph{binnen} de zin waar je je op die bron baseert, dus niet er buiten! Maak meteen een verwijzing als je gebruik maakt van een bron. Doe dit dus \emph{niet} aan het einde van een lange paragraaf. Baseer nooit teveel aansluitende tekst op eenzelfde bron.
+\subsection{Sustainability in CI/CD}
 
-Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle nodige info aanwezig is om de bron terug te vinden (zoals uitvoerig besproken in de lessen Research Methods).
+In the wake of escalating environmental concerns, \textcite{Corewave2023}'s newsletter underscores the imperative for sustainable practices in software and app development. Highlighting eco-friendly strategies, the piece emphasizes code optimization, cloud computing efficiency, energy-efficient algorithms, and user education as key contributors to a more sustainable approach. Beyond environmental benefits, embracing sustainable development offers businesses cost savings, economic advantages, improved user experiences, and an enhanced brand reputation. Case studies featuring tech giants like Google, Apple, and Ecosia illustrate successful implementations of sustainable initiatives, reinforcing the notion that integrating eco-friendly methods into software and application development is not just a trend but a crucial step towards a more resilient and sustainable future.
+
+\subsection{Shifting to Linux}
+
+The shift from Windows agents to Linux Virtual machines not only offers better cost-effectiveness and operational efficiency but also underscores a significant contribution to environmental sustainability. \autocite{Germain2017} Linux's open-source nature, coupled with its lightweight yet powerful design, promotes efficient use of resources and energy. Code optimization practices in Linux development play a significant role in reducing energy consumption, thereby promoting environmental consciousness. Linux's compatibility with cloud computing also contributes to energy efficiency by enabling the selection of providers that prioritize eco-friendly data centers and practices like serverless computing. Moreover, Linux's emphasis on energy-efficient algorithms and user education reinforces its reputation as a platform with a reduced environmental footprint. Opting for Linux Virtual Machines over Windows agents not only benefits businesses in terms of operational costs but, also actively supports sustainability initiatives, thereby positively impacting the environment.
+
+Ethan T. Schmidt, chief technology officer at GymBull.com, shifted to Linux and never looked back. Although there was some initial apprehension from his non-developer staff about leaving Windows behind, the transition was almost transparent. The Ubuntu interface of today is virtually the same as Windows, and it helps that they have Linux troubleshooters to help out anyone who needs it. \autocite{Germain2017}
 
 % Voor literatuurverwijzingen zijn er twee belangrijke commando's:
 % \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
@@ -54,31 +42,46 @@ Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle no
 %   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
 %   ...'')
 
-Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
 
 %---------- Methodologie ------------------------------------------------------
-\section{Methodologie}%
+\section{Methodology}%
 \label{sec:methodologie}
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
+\subsection{Phase 1: Literary review}
+The initial phase of my research involves conducting a comprehensive review of academic literature and web articles pertinent to sustainability, CI/CD processes, and their eco-friendly practices. This will be achieved through targeted searches using relevant terms and keywords. Upon completion of this study, my aim is to gain deeper insights into the evolution of CI/CD processes and their alignment with sustainability principles. Specifically, I intend to acquire a better understanding of the various strategies, tools, and approaches utilized for integrating sustainability into CI/CD pipelines.
 
-Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
+\subsection{Phase 2: Shortlist}
+Following the literature review, the next step involves validating the identified information through practical observation at Wolters Kluwer. This entails examining their CI/CD processes and conducting interviews with colleagues to gather qualitative insights into sustainable CI/CD practices. By leveraging this firsthand information, I aim to compile a shortlist of the most promising sustainability practices, frameworks, and tools based on their practical applicability. In making this shortlist, factors such as scalability and ease of adoption, as mentioned in the state-of-the-art literature, will be carefully considered.
 
-Vermijd onderzoekstechnieken die geen objectieve, meetbare resultaten kunnen opleveren. Enquêtes, bijvoorbeeld, zijn voor een bachelorproef informatica meestal \textbf{niet geschikt}. De antwoorden zijn eerder meningen dan feiten en in de praktijk blijkt het ook bijzonder moeilijk om voldoende respondenten te vinden. Studenten die een enquête willen voeren, hebben meestal ook geen goede definitie van de populatie, waardoor ook niet kan aangetoond worden dat eventuele resultaten representatief zijn.
+\subsection{Phase 3: Metrics and Tools Analysis}
+A set of sustainability metrics and key performance indicators relevant to CI/CD processes will be developed from the evaluations conducted. Existing tools and software designed to support more sustainable CI/CD processes will be evaluated based on these metrics, enabling the identification of solutions that align closely with the defined sustainability criteria. This evaluation process will facilitate informed decision-making regarding the adoption and implementation of sustainable CI/CD practices.
 
-Uit dit onderdeel moet duidelijk naar voor komen dat je bachelorproef ook technisch voldoen\-de diepgang zal bevatten. Het zou niet kloppen als een bachelorproef informatica ook door bv.\ een student marketing zou kunnen uitgevoerd worden.
+\subsection{Phase 4: Proof-of-Concept}
+The subsequent phase of the bachelor thesis involves crafting a comprehensive plan and a Proof-of-Concept that delineates the objectives, scope, and metrics to be assessed. Criteria for success will be defined to evaluate the effectiveness of each shortlisted approach. Subsequently, the Proof-of-Concept will be implemented within Wolters Kluwer's controlled CI/CD environment. This implementation phase will enable the measurement and collection of data pertaining to environmental impact, efficiency, and other relevant metrics. Concurrently, this initiative will aid Wolters Kluwer in advancing towards more sustainable and efficient CI/CD practices.
 
-Je beschrijft ook al welke tools (hardware, software, diensten, \ldots) je denkt hiervoor te gebruiken of te ontwikkelen.
+\subsection{Phase 5: Conclusion}
+The findings from the comparative study of each shortlisted approach will be summarized to draw conclusions regarding the most effective and practical, sustainable CI/CD practices. This summarization will enable the provision of recommendations for organizations, such as my internship company, that are seeking to implement sustainable CI/CD processes. These recommendations will be based on the identified strengths and weaknesses of each approach, facilitating informed decision-making and effective implementation strategies for sustainable CI/CD practices.
 
-Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]
+    {graphics/Gantt.png}
+    \caption{\label{fig:protocol}Gannt-diagram of the methodology}
+\end{figure}
 
 %---------- Verwachte resultaten ----------------------------------------------
-\section{Verwacht resultaat, conclusie}%
+\section{Expected results, conclusion}%
 \label{sec:verwachte_resultaten}
 
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
+The conclusion of the comparative study is expected to offer several key insights. Firstly, the identification of optimal sustainability practices for CI/CD processes sheds light on why certain approaches outperform others in reducing environmental impact and resource consumption. The findings will also address the scalability of each shortlisted sustainability approach, providing insights into their suitability for different organizational scales.
 
-Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw bachelorproef voor een meerwaarde?
+Additionally, the study will contribute recommendations for organizations aiming to implement sustainable CI/CD processes. These recommendations will encompass best practices, potential challenges, and considerations for successful adoption. The delicate balance between CI/CD efficiency and sustainability goals will be acknowledged, offering guidance on optimizing both aspects. Ultimately, the study's contributions aim to advance the field of sustainable software development, providing valuable insights for practitioners, researchers, and organizations seeking to align their CI/CD processes with environmental sustainability.
 
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
+
+
+
+
+
+
+
 
