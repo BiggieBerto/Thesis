@@ -7,12 +7,123 @@
 
 % Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
 
-Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
+% Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
 
-Je verwijst bij elke bewering die je doet, vakterm die je introduceert, enz.\ naar je bronnen. In \LaTeX{} kan dat met het commando \texttt{$\backslash${textcite\{\}}} of \texttt{$\backslash${autocite\{\}}}. Als argument van het commando geef je de ``sleutel'' van een ``record'' in een bibliografische databank in het Bib\LaTeX{}-formaat (een tekstbestand). Als je expliciet naar de auteur verwijst in de zin (narratieve referentie), gebruik je \texttt{$\backslash${}textcite\{\}}. Soms is de auteursnaam niet expliciet een onderdeel van de zin, dan gebruik je \texttt{$\backslash${}autocite\{\}} (referentie tussen haakjes). Dit gebruik je bv.~bij een citaat, of om in het bijschrift van een overgenomen afbeelding, broncode, tabel, enz. te verwijzen naar de bron. In de volgende paragraaf een voorbeeld van elk.
+% Je verwijst bij elke bewering die je doet, vakterm die je introduceert, enz.\ naar je bronnen. In \LaTeX{} kan dat met het commando \texttt{$\backslash${textcite\{\}}} of \texttt{$\backslash${autocite\{\}}}. Als argument van het commando geef je de ``sleutel'' van een ``record'' in een bibliografische databank in het Bib\LaTeX{}-formaat (een tekstbestand). Als je expliciet naar de auteur verwijst in de zin (narratieve referentie), gebruik je \texttt{$\backslash${}textcite\{\}}. Soms is de auteursnaam niet expliciet een onderdeel van de zin, dan gebruik je \texttt{$\backslash${}autocite\{\}} (referentie tussen haakjes). Dit gebruik je bv.~bij een citaat, of om in het bijschrift van een overgenomen afbeelding, broncode, tabel, enz. te verwijzen naar de bron. In de volgende paragraaf een voorbeeld van elk.
 
-\textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
+% \textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
 
-Let er ook op: het \texttt{cite}-commando voor de punt, dus binnen de zin. Je verwijst meteen naar een bron in de eerste zin die erop gebaseerd is, dus niet pas op het einde van een paragraaf.
+% Let er ook op: het \texttt{cite}-commando voor de punt, dus binnen de zin. Je verwijst meteen naar een bron in de eerste zin die erop gebaseerd is, dus niet pas op het einde van een paragraaf.
 
-\lipsum[7-20]
+% Bronnen:
+https://www.infoworld.com/article/3271126/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html
+https://www.redhat.com/en/topics/devops/what-is-ci-cd
+https://www.synopsys.com/glossary/what-is-cicd-tools.html
+https://www.linkedin.com/pulse/sustainable-development-incorporating-eco-friendly-practices/?trk=article-ssr-frontend-pulse_more-articles_related-content-card
+https://colorlib.com/wp/cloud-computing-statistics/
+https://zudu.co.uk/blog/green-app-development-how-to-create-an-app-more-sustainably/#:~:text=Use%20sustainable%20services,reach%20a%20greener%20future%20sooner.
+https://blog.google/outreach-initiatives/sustainability/our-third-decade-climate-action-realizing-carbon-free-future/#:~:text=As%20of%20today%2C%20we%20have,carbon%20footprint%20is%20now%20zero.
+https://cloud.google.com/blog/topics/sustainability/5-years-of-100-percent-renewable-energy
+https://subscription.packtpub.com/book/cloud-and-networking/9781800563513/6/ch06lvl1sec32/understanding-build-agents
+https://hexmaster.nl/posts/create-custom-vm-images-for-azure-devops/
+
+
+In examining the present landscape of software automation, the breadth of available options mirrors the vastness of an ocean \autocite{King2019}.
+The ever-evolving landscape of automation is complex, and if you want to utilize all possible solutions, you may be busy for a long while \autocite{King2019}.
+This literature review aims to provide an overview of the current state of CI/CD processes, drawing extensively from professional literature.
+
+\subsection{Continous Integration and Continous Deployment}
+Continous Integration (CI) is a set of practices that automates the integration of small code changes and check them in to a version control repository \autocite{infoworld}.
+Using a consistent integration process can help catch bugs early in the development cycle, which can save time and money. 
+At the same time it can encourage developers to commit their code more frequently, which leads to a better collaboration between team members and a more stable codebase.
+
+Continous Delivery (CD) follows up the CI process by automating the release of validated code to a repository \autocite{redhat}.
+Every stage in this process includes test automation and code quality checks, which should ensure that the code is always in a deployable state.
+
+Continuous Deployment (CD) is the next and last step in the CI/CD process.
+It reffers to the automation of the release of a developer's change to the production environment after passing through the CI/CD pipeline \autocite{redhat}.
+
+This CI/CD process can make sure that small changes could go live in a matter of minutes, instead of days or weeks. 
+This makes it easier to fix bugs and incorporate feedback from users.
+
+Because there is no manual intervention in the CI/CD process, the deployment relies heavily on well-designed test automation.
+This can be a challenge because it needs to cover all possible scenarios, which can be difficult to predict \autocite{redhat}.
+
+\subsection{CI/CD Tools}
+The journey of implementing Continuous Integration and Continuous Deployment (CI/CD) begins with the crucial decision of selecting the appropriate tool(s). 
+While some tools offer comprehensive solutions covering the entire CI/CD pipeline, others specialize in specific aspects of the process \autocite{redhat}. 
+When making this decision, it is important to assess various factors, including the tool's feature set, usability, scalability, and cost \autocite{synopsys}. 
+By carefully considering these aspects, teams can ensure that the chosen tool aligns with their unique requirements and organizational goals.
+In the following sections, we take a look at some of the most widely used CI/CD tools, providing insights into their functionalities and suitability for different use cases.
+
+\subsubsection{Jenkins}
+Jenkins is an open-source automation server that is widely used for CI/CD processes. It provides a variety of plugins to support building and deploying applications. 
+Jenkins is highly extensible and can be easily integrated with other tools and services. 
+It is a popular choice for organizations looking to implement CI/CD pipelines due to its flexibility and robust feature set \autocite{redhat}.
+
+\subsubsection{GitLab}
+GitLab is a web-based Git repository manager CI/CD pipeline features using an open-source license.
+It provides a complete DevOps platform that enables teams to manage their code, plan, build, verify, package, release, configure, and monitor applications.
+
+\subsubsection{Jetbrains TeamCity}
+Teramcity is a Java-based CI/CD server that is developed by JetBrains. It offers support for various programs like Docker, Jira, etc.
+Jetbrains Teamcity is the CI/CD tool that is used at Wolters Kluwer, the company where a part of this research is conducted.
+
+\subsection{Sustainability of CI/CD}
+In the wake of escalating environmental concerns, Corewave (2023)’s newsletter underscores the imperative for sustainable practices in software and app development.
+This section will discuss some best practices for sustainable CI/CD, which can help organizations reduce their carbon footprint and contribute to a greener future.
+Beyond the environmental benefits, embracing sustainable development offers business cost savings, economic advantages, improved user experiences, and an enhanced brand reputation \autocite{linkedin}.
+
+\subsubsection{Code optimization}
+Writing efficient code is a fundamental aspect of sustainable software development. 
+The implementation of code is a resource and energy-intensive process, and optimizing code can help reduce the energy consumption of applications.
+By prioritizing clean code practices and avoiding unnecessary code, developers can create more sustainable applications that consume fewer resources \autocite{linkedin}.
+
+\subsubsection{Infrastructure optimization} 
+\textcite{colorlib} states that more than 40\% of enterprises use cloud automation. This can optimize costs, time, and resources.
+By leveraging cloud services, organizations can reduce the energy consumption of their infrastructure and improve the efficiency of their CI/CD pipelines.
+But your choice of cloud provider can also have an impact on the sustainability of your CI/CD process. 
+Some prioritize energy-efficient data centres and adopting practices such as serverless computing to optimize their use.
+
+\subsubsection{User education}
+Educating users about the environmental impact of software development can help raise awareness and encourage sustainable practices.
+It could promote writing more efficient code
+
+\subsubsection{Code design}
+Code developers should aim to extend the life cycle of their products by designing them to be easily maintained and updated but also to reduce the need for frequent updates \autocite{zudu}.
+But also adding features such as dark mode, automatic screen brightness adjustment and efficient data caching can help reduce the energy consumption of applications.
+
+\section{Case Studies in Sustainable Development}
+In this section we will take a look at some case studies of companies that have implemented sustainable practices in their software development \autocite{linkedin}.
+
+\subsection{Google}
+Google is a leader in purchasing renewable energy and has been carbon neutral since 2007 \autocite{google}. They committed to powering their operations with 100\% renewable energy by 2030 \autocite{googlecloud}.
+Their Android Go program focuses on developing apps that are optimized for low-end devices, which can help reduce energy consumption \autocite{linkedin}.
+
+\subsection{Apple}
+Apple has made significant strides in reducing its carbon footprint by transitioning to renewable energy sources. 
+They encourage developers to create energy-efficient apps by providing tools and resources to optimize their code \autocite{linkedin}.
+
+\subsection{Ecosia}
+Ecosia, a search engine that plants trees with its ad revenue, is a prime example of a sustainable software company. 
+Users can support forest restoration projects by just using the search engine, which has planted over 200 million trees to date \autocite{linkedin}.
+
+\section{Build agents}
+In almost all CI/CD pipelines, the build agent is a crucial component. An agent is a service that runs the build and deployment processes \autocite{packtpub}.
+The agent can be run on a physical machine, a virtual machine, or a container. 
+You would need at least one agent to run your build and deployment processes, but you can also run multiple agents to parallelize your build and deployment processes.
+When an agent is busy running a build or deployment process, it is not available to run another process.
+This can lead to bottlenecks in your CI/CD pipeline, especially when you have a lot of builds and deployments to run.
+In the following subsections we will take a look at some strategies to optimize build agents and make them more sustainable.
+
+\subsection{Build agent scaling}
+To avoid bottlenecks and long queue times, you can decide to create more build agents.
+You can choose to use Microsoft-hosted agents, which you would not have to manage yourself, but this could get expensive.
+You could also choose to create your own build agents, which you would have to manage yourself, which could be very time-consuming \autocite{hexmaster}.
+
+Luckily there is a solution to dynamically create build agents when you need them and destroy them when you don't need them.
+This can all be done automatically by using Azure DevOps and Azure Virtual Machines. You can create a set of pool rules so Azure knows when to create a new build agent and when to destroy it.
+But there is one last issue to solve, after automating the creation and destruction of build agents you would still have to install all the necessary software on the build agent.
+This can be solved by creating a custom VM image that already has all the necessary software installed \autocite{hexmaster}.
+Not only will this move your CI/CD infrastructure to the cloud, but it will also save a lot of power by avoiding idle build agents.
+The Azure Virtual Machines cost a lot of money so this process minimizes the cost of running build agents and saves up time creating a new build agent.
