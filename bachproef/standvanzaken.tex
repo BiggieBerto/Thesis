@@ -27,30 +27,36 @@
 % https://subscription.packtpub.com/book/cloud-and-networking/9781800563513/6/ch06lvl1sec32/understanding-build-agents
 % https://hexmaster.nl/posts/create-custom-vm-images-for-azure-devops/
 % https://medium.com/linode-cube/migrating-to-linux-from-windows-makes-for-good-business-d44888af3cec
+% https://www.linkedin.com/pulse/why-choose-linux-over-windows-mayank-singh/
 
 
 In examining the present landscape of software automation, the breadth of available options mirrors the vastness of an ocean \autocite{King2019}.
 The ever-evolving landscape of automation is complex, and if you want to utilize all possible solutions, you may be busy for a long while \autocite{King2019}.
-This literature review aims to provide an overview of the current state of CI/CD processes, drawing extensively from professional literature.
+This literature review dives deeper into this vast ocean, aiming to provide an overview of the current landscape op sustainability in CI/CD processes, drawing extensively from professional literature.
 
-\subsection{Continous Integration and Continous Deployment}
+\section{Continous Integration and Continous Deployment}
+Continuous Integration and Deployment (CI/CD) processess have revolutionized software development by enabling teams to deliver high-quality code at a rapid pace \autocite{infoworld}.
+However, as the software industry grapples with the challenges of sustainability, it is imperative to explore how software development, and subsequent, CI/CD practices can be optimized to align with eco-friendly principles.
+
 Continous Integration (CI) is a set of practices that automates the integration of small code changes and check them in to a version control repository \autocite{infoworld}.
-Using a consistent integration process can help catch bugs early in the development cycle, which can save time and money. 
-At the same time it can encourage developers to commit their code more frequently, which leads to a better collaboration between team members and a more stable codebase.
+By regularly merging code changes into a shared repository, developers can detect and resolve integration issues early in the development process because CI ensures that the each change is tested and verified by a build.
+This process does not only save time and money but also encourages developers to commit their code more frequently.
+This leads to a better collaboration between team members and a more cohesive and stable codebase.
 
 Continous Delivery (CD) follows up the CI process by automating the release of validated code to a repository \autocite{redhat}.
 Every stage in this process includes test automation and code quality checks, which should ensure that the code is always in a deployable state.
+This approach minimizes the risk of human error and ensures that the code is always ready to be deployed to production. 
+Developers can deliver software updates with confidence because the CD process ensures that bad code changes are caught early in the pipeline.
 
 Continuous Deployment (CD) is the next and last step in the CI/CD process.
 It reffers to the automation of the release of a developer's change to the production environment after passing through the CI/CD pipeline \autocite{redhat}.
+CD elminiates the need for manual intervention in the deployment process, which can lead to faster and more reliable deployments.
 
 This CI/CD process can make sure that small changes could go live in a matter of minutes, instead of days or weeks. 
-This makes it easier to fix bugs and incorporate feedback from users.
-
 Because there is no manual intervention in the CI/CD process, the deployment relies heavily on well-designed test automation.
 This can be a challenge because it needs to cover all possible scenarios, which can be difficult to predict \autocite{redhat}.
 
-\subsection{CI/CD Tools}
+\section{CI/CD Tools}
 The journey of implementing Continuous Integration and Continuous Deployment (CI/CD) begins with the crucial decision of selecting the appropriate tool(s). 
 While some tools offer comprehensive solutions covering the entire CI/CD pipeline, others specialize in specific aspects of the process \autocite{redhat}. 
 When making this decision, it is important to assess various factors, including the tool's feature set, usability, scalability, and cost \autocite{synopsys}. 
@@ -70,8 +76,10 @@ It provides a complete DevOps platform that enables teams to manage their code, 
 Teramcity is a Java-based CI/CD server that is developed by JetBrains. It offers support for various programs like Docker, Jira, etc.
 Jetbrains Teamcity is the CI/CD tool that is used at Wolters Kluwer, the company where a part of this research is conducted.
 
-\subsection{Sustainability of CI/CD}
-In the wake of escalating environmental concerns, Corewave (2023)’s newsletter underscores the imperative for sustainable practices in software and app development.
+
+
+\section{Sustainability of CI/CD}
+In the wake of escalating environmental concerns, the newsletter of \textcite{Corewave} underscores the imperative for sustainable practices in software and app development.
 This section will discuss some best practices for sustainable CI/CD, which can help organizations reduce their carbon footprint and contribute to a greener future.
 Beyond the environmental benefits, embracing sustainable development offers business cost savings, economic advantages, improved user experiences, and an enhanced brand reputation \autocite{linkedin}.
 
@@ -129,6 +137,33 @@ This can be solved by creating a custom VM image that already has all the necess
 Not only will this move your CI/CD infrastructure to the cloud, but it will also save a lot of power by avoiding idle build agents.
 The Azure Virtual Machines cost a lot of money so this process minimizes the cost of running build agents and saves up time creating a new build agent.
 
-\subsection{Shifting to Linux}
+\section{Shifting to Linux}
 Another way to optimize your build agents is to shift the operating system to Linux. 
 The switch from Windows to Linux not only offers better cost-effectiveness and operational effiency but also underscores a significant contribution to environmental sustainability \autocite{medium}.
+\textcite{medium} states a success story of Ethan T. Schmidt, chief technology officer at GymBull.com, who shifted to Linux and never looked back.
+Although there was some initial apprehension from his non-developer staff about leaving Windows behind, the transition was almost transparent. 
+The Ubuntu interface of today is virtually the same as Windows, and it helps that they have Linux troubleshooters to help out anyone who needs it. 
+
+The following are some of the reasons why Linux is a better choice as operating system, not only for build agents but also for other purposes.
+
+\subsection{Open source}
+Linux is open source, which means that the source code is freely available to the public. 
+This makes Linux more secure, stable and reliable than Windows \autocite{linkedin2}.
+
+\subsection{Customization}
+Linux is highly customizable, which means that you can tailor it to your specific needs. 
+Users are able to choose from a wide range of distributions, each with its own set of features and capabilities \autocite{linkedin2}.
+
+\subsection{Security}
+Linux is known for its robust security features, which make it less vulnerable to malware and other cyber threats.
+It is less targeted by hackers than Windows, and due to their open source nature, vulnerabilities are quickly identified and patched \autocite{linkedin2}.
+
+\subsection{Cost}
+Linux is free to use, which can result in significant cost savings for organizations \autocite{linkedin2}. 
+You don't have to pay for licenses, and you can run Linux on older hardware, which can extend the life of your machines.
+
+\subsection{Performance}
+Linux is known for its superior performance, which can lead to faster build times and improved productivity.
+Wether you are just using your personal computer or a build agent in the cloud, Linux is a better choice for performance \autocite{linkedin2}.
+Better performance means that you can run more builds and deployments in less time, which can help you deliver software faster.
+
