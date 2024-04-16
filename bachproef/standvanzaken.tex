@@ -16,10 +16,19 @@
 % Let er ook op: het \texttt{cite}-commando voor de punt, dus binnen de zin. Je verwijst meteen naar een bron in de eerste zin die erop gebaseerd is, dus niet pas op het einde van een paragraaf.
 
 
-
 In examining the present landscape of software automation, the breadth of available options mirrors the vastness of an ocean \autocite{King2019}.
 The ever-evolving landscape of automation is complex, and if you want to utilize all possible solutions, you may be busy for a long while \autocite{King2019}.
 This literature review dives deeper into this vast ocean, aiming to provide an overview of the current landscape op sustainability in CI/CD processes, drawing extensively from professional literature.
+
+
+
+\section{The problem in today's software development}
+Today the typical development journey mainly focuses on how it will impact an organization instead of addressing how it affects the environment. Next to factors like improving time-to-market, reducing human error, debugging and making resource management more efficient, part of your infrastructure strategy should include ways to reduce your carbon footprint and impact on the planet /autocite{Brode2022}. 
+To introduce why it is important to address the problem it helps to take a look at the impact of technology on the climate and planet. \textcite{Brode2022} states that a research in 2022 showed that there are already more than 16 million mobile devices in use. The average emission of one device is around 85kg of CO2 \autocite{Six2023}. Next to the carbon emission, the computing consumes an enormous amount of power. Data centers used around 416 terawatts in 2020 and the Bitcoin network consumed even more than all data centers combined \textcite{Brode2022}. 
+ The mobile devices not only emit a lot of emission, they also create a lot of waste. Very little hardware is recycled and electronic waste comprises 70\% of all toxic waste. It is estimated on a total of 40 million tons annually. With the power consumption of data centers they also need cooling. Internet usage uses 3,000 liters of water per person each year and emits 2,000 kg of CO2 \autocite{Brode2022}.
+With these numbers only raising each year it is important every company contribute in creating a greener world. Software developers and DevOps teams can participate in this goal by applying best practices. 
+
+
 
 \section{Continous Integration and Continous Deployment}
 Continuous Integration and Deployment (CI/CD) processess have revolutionized software development by enabling teams to deliver high-quality code at a rapid pace \autocite{Sacolick2024}.
@@ -43,6 +52,8 @@ This CI/CD process can make sure that small changes could go live in a matter of
 Because there is no manual intervention in the CI/CD process, the deployment relies heavily on well-designed test automation.
 This can be a challenge because it needs to cover all possible scenarios, which can be difficult to predict \autocite{Hat2023}.
 
+
+
 \section{CI/CD Tools}
 The journey of implementing Continuous Integration and Continuous Deployment (CI/CD) begins with the crucial decision of selecting the appropriate tool(s). 
 While some tools offer comprehensive solutions covering the entire CI/CD pipeline, others specialize in specific aspects of the process \autocite{Hat2023}. 
@@ -50,16 +61,19 @@ When making this decision, it is important to assess various factors, including 
 By carefully considering these aspects, teams can ensure that the chosen tool aligns with their unique requirements and organizational goals.
 In the following sections, we take a look at some of the most widely used CI/CD tools, providing insights into their functionalities and suitability for different use cases.
 
-\subsubsection{Jenkins}
+
+\subsection{Jenkins}
 Jenkins is an open-source automation server that is widely used for CI/CD processes. It provides a variety of plugins to support building and deploying applications. 
 Jenkins is highly extensible and can be easily integrated with other tools and services. 
 It is a popular choice for organizations looking to implement CI/CD pipelines due to its flexibility and robust feature set \autocite{Hat2023}.
 
-\subsubsection{GitLab}
+
+\subsection{GitLab}
 GitLab is a web-based Git repository manager CI/CD pipeline features using an open-source license.
 It provides a complete DevOps platform that enables teams to manage their code, plan, build, verify, package, release, configure, and monitor applications.
 
-\subsubsection{Jetbrains TeamCity}
+
+\subsection{Jetbrains TeamCity}
 Teramcity is a Java-based CI/CD server that is developed by JetBrains. It offers support for various programs like Docker, Jira, etc.
 Jetbrains Teamcity is the CI/CD tool that is used at Wolters Kluwer, the company where a part of this research is conducted.
 
@@ -67,42 +81,106 @@ Jetbrains Teamcity is the CI/CD tool that is used at Wolters Kluwer, the company
 
 \section{Sustainability of CI/CD}
 In the wake of escalating environmental concerns, the newsletter of \textcite{Corewave2023} underscores the imperative for sustainable practices in software and app development.
-This section will discuss some best practices for sustainable CI/CD, which can help organizations reduce their carbon footprint and contribute to a greener future.
+This section will discuss some best practices for sustainable DevOps, which can help organizations reduce their carbon footprint and contribute to a greener future.
 Beyond the environmental benefits, embracing sustainable development offers business cost savings, economic advantages, improved user experiences, and an enhanced brand reputation \autocite{Corewave2023}.
 
-\subsubsection{Code optimization}
+
+\subsection{Code optimization}
 Writing efficient code is a fundamental aspect of sustainable software development. 
 The implementation of code is a resource and energy-intensive process, and optimizing code can help reduce the energy consumption of applications.
-By prioritizing clean code practices and avoiding unnecessary code, developers can create more sustainable applications that consume fewer resources \autocite{Corewave2023}.
+By prioritizing clean code practices, that are summed up in the following subsections, and avoiding unnecessary code, developers can create more sustainable applications that consume fewer resources \autocite{Corewave2023}.
 
-\subsubsection{Infrastructure optimization} 
-\textcite{Krivec2023} states that more than 40\% of enterprises use cloud automation. This can optimize costs, time, and resources.
-By leveraging cloud services, organizations can reduce the energy consumption of their infrastructure and improve the efficiency of their CI/CD pipelines.
-But your choice of cloud provider can also have an impact on the sustainability of your CI/CD process. 
-Some prioritize energy-efficient data centres and adopting practices such as serverless computing to optimize their use.
+\subsubsection{Identify bottlenecks}
+Every line of code requires some CPU time. That is why it is important to measure and analyze the performance of your code. This way you can identify slow and efficient parts and work on them to optimize your process \autocite{Ojeda}.
 
-\subsubsection{User education}
-Educating users about the environmental impact of software development can help raise awareness and encourage sustainable practices.
-It could promote writing more efficient code
+\subsubsection{Choose the right data structures and algorithms}
+In this part it is recommended to choose the data structure and algorithm that suits best for your problem. For example using a hash table to storing and retrieving data quickly. Avoid using unnecessary structures such as creating copies of data \autocite{Ojeda}.
 
-\subsubsection{Code design}
+\subsubsection{Use built-in or standard libraries}
+Another option to optimize your code is to use the built-in libraries that come with your programming language. These libraries often provide optimized functions such as the math library in Python to perform mathematical functions like calculating a square root \autocite{Ojeda}.
+
+
+\subsection{Infrastructure optimization} 
+\textcite{Krivec2023} states that more than 40\% of enterprises use cloud automation. This can optimize costs, time, and resources. By leveraging cloud services, organizations can reduce the energy consumption of their infrastructure and improve the efficiency of their CI/CD pipelines.
+But your choice of cloud provider can also have an impact on the sustainability of your CI/CD process. Some prioritize energy-efficient data centers and adopting practices such as serverless computing to optimize their use \autocite{Festus2024}
+
+
+\subsection{User education}
+Educating users about the environmental impact of software development can help raise awareness and empowers them to make choices that align with sustainable goals \autocite{Festus2024}. 
+It could promote writing more efficient code and applying best practices.
+
+
+\subsection{Lifecycle Management and Decommissioning}
+Sustainable automation extends to the entire lifecycle of infrastructure components. Another big part is the decommissioning and recycling of hardware. This includes responsible disposal or retired equipment and minimizing electronic waste, contributing to the overall sustainability of technology operations \autocite{Festus2024}.
+
+
+\subsection{Infrastructure as Code}
+Infrastrcture as Code (IaC) is the managing and provisioning of infrastructure through code instead of through manual processes \autocite{RedHat2022}. IaC allows DevOps teams to define and manage infrastructure using code, enabling versioning, collaboration, and the ability to reproduce environments. This enhances the efficiency of infrastructure management and reduces the likelihood of misconfigurations that could lead to unnecessary resource usage \autocite{Festus2024}
+
+
+\subsection{Clean-up CI/CD environment}
+Like mentioned this bachelor thesis is based on the internship at Wolters Kluwer. They have more than 27 thousand jobs on their environment and it uses unnecessary memory. 
+Jobs that are not used anymore take up memory and should be archived. But also jobs with wrong configurations should be tackled.
+This is again an example of user education. The developers should pay attention to this and archive their jobs when they are not used anymore.
+
+
+\subsection{Code design}
 Code developers should aim to extend the life cycle of their products by designing them to be easily maintained and updated but also to reduce the need for frequent updates \autocite{Zudu2024}.
 But also adding features such as dark mode, automatic screen brightness adjustment and efficient data caching can help reduce the energy consumption of applications.
 
+
+\subsection{Containerization}
+A container is lightweight software with components that bundle and package the application, its dependencies and its configuration in an image. The image operates within isolated user environments on conventional operating systems.
+The scaling of automated build agents, which is explained later in this state-of-art, is a nice example of the efficiency of containerization. But this is not all it has to offer.
+
+\subsubsection{Automated build and testing}
+Containers could be used to bundle the correct tool, version and other execution assets in a package. This makes it easy to build a given application with a set of tools and scripts as the package is ready to run. This container can be controlled by several providers such as Kubernetes.
+Not only the build can be automated, the testing tools and scripts can be packaged in separate containers.
+
+\subsubsection{Clean environment}
+A well packaged containers could not contain impurities that could affect the execution of a build. A build can’t affect a container and a same build will always get you the same result because of the creation of a new image for every build. 
+It is also possible to create a production grade container that reflects a clone of your production environment. This way the principle of continuous delivery is supported because code can be tested in a production environment before pushing it to production.
+By containerizing your resources you avoid the sharing of resources which could result in a slower process. This way no resources go to waste and there are always enough resources at any moment just like the automated scaling of the build agents
+Because every run is in a separate container it is isolated from other resources. This protects the current and other application from data breaches during the CI/CD process.
+
+\subsubsection{Adoption and scaling with containers}
+With the use of containers team can easily adopt different tools and technologies with various customizations. Container based CI/CD solutions can be easily migrated to the cloud. In case your enterprise would want to switch to another CI/CD provider it would be a lot easier to move your containers instead of separate jobs. 
+It also makes scaling a lot easier. Containers can scale in a few seconds, while traditional infrastructures could take minutes to hours. You can scale them both vertically (add more power to it such as adding CPU power) and horizontally (add more containers) \autocite{Samant2021}. The only thing you need is a container orchestrator which makes the managing of your containers easier as well.
+
+
+\subsection{Monitoring in CI/CD}
+A step towards an efficient and sustainable CI/CD pipeline is the monitoring of it. It gives you a proper overview of the performance of your pipeline. 
+•	Long-term trends: You can track the count of builds, but also the workload on specific moments of a day. This way you can see the need to scale your infrastructure
+•	Over-time comparison: You can see the speed your builds run compared to the speed of last week or longer
+•	Alerting: if something is broken you can track the exact time of the break and you will be able to rollback builds that couldn’t complete
+•	Ad-hoc retrospective analysis: by proper analyzing different metrics you are able to see which events relate and impact each other
+Monitoring the CI/CD pipeline is an important aspect in this research and will give an overview on the methods that improve sustainability. The used metrics for the research can be found in the methodology.
+
+\subsubsection{Prometheus}
+There are some tools to observe the performance of your environment but the most convenient one is Prometheus. This is also the tool that will be used to support this research. You will first need to configure Prometheus with your pipeline. Then it is pretty easy to build a Grafana style dashboard. Once you have made your dashboard it is time to create some panels. It is important to determine the metrics to track. These can vary from CPU usage of your server to a container status to JVM memory usage. Grafana offers many visualizations to present the data.
+\cite{MetricFire2023}
+
+
+
 \section{Case Studies in Sustainable Development}
 In this section we will take a look at some case studies of companies that have implemented sustainable practices in their software development \autocite{Corewave2023}.
+
 
 \subsection{Google}
 Google is a leader in purchasing renewable energy and has been carbon neutral since 2007 \autocite{Pichai2020}. They committed to powering their operations with 100\% renewable energy by 2030 \autocite{PetersonCorio2022}.
 Their Android Go program focuses on developing apps that are optimized for low-end devices, which can help reduce energy consumption \autocite{Corewave2023}.
 
+
 \subsection{Apple}
 Apple has made significant strides in reducing its carbon footprint by transitioning to renewable energy sources. 
 They encourage developers to create energy-efficient apps by providing tools and resources to optimize their code \autocite{Corewave2023}.
 
+
 \subsection{Ecosia}
 Ecosia, a search engine that plants trees with its ad revenue, is a prime example of a sustainable software company. 
 Users can support forest restoration projects by just using the search engine, which has planted over 200 million trees to date \autocite{Corewave2023}.
+
+
 
 \section{Build agents}
 In almost all CI/CD pipelines, the build agent is a crucial component. An agent is a service that runs the build and deployment processes \autocite{packt}.
@@ -111,6 +189,7 @@ You would need at least one agent to run your build and deployment processes, bu
 When an agent is busy running a build or deployment process, it is not available to run another process.
 This can lead to bottlenecks in your CI/CD pipeline, especially when you have a lot of builds and deployments to run.
 In the following subsections we will take a look at some strategies to optimize build agents and make them more sustainable.
+
 
 \subsection{Build agent scaling}
 To avoid bottlenecks and long queue times, you can decide to create more build agents.
@@ -124,6 +203,8 @@ This can be solved by creating a custom VM image that already has all the necess
 Not only will this move your CI/CD infrastructure to the cloud, but it will also save a lot of power by avoiding idle build agents.
 The Azure Virtual Machines cost a lot of money so this process minimizes the cost of running build agents and saves up time creating a new build agent.
 
+
+
 \section{Shifting to Linux}
 Another way to optimize your build agents is to shift the operating system to Linux. 
 The switch from Windows to Linux not only offers better cost-effectiveness and operational effiency but also underscores a significant contribution to environmental sustainability \autocite{Germain2017}.
@@ -133,21 +214,26 @@ The Ubuntu interface of today is virtually the same as Windows, and it helps tha
 
 The following are some of the reasons why Linux is a better choice as operating system, not only for build agents but also for other purposes.
 
+
 \subsection{Open source}
 Linux is open source, which means that the source code is freely available to the public. 
 This makes Linux more secure, stable and reliable than Windows \autocite{Singh2023}.
+
 
 \subsection{Customization}
 Linux is highly customizable, which means that you can tailor it to your specific needs. 
 Users are able to choose from a wide range of distributions, each with its own set of features and capabilities \autocite{Singh2023}.
 
+
 \subsection{Security}
 Linux is known for its robust security features, which make it less vulnerable to malware and other cyber threats.
 It is less targeted by hackers than Windows, and due to their open source nature, vulnerabilities are quickly identified and patched \autocite{Singh2023}.
 
+
 \subsection{Cost}
 Linux is free to use, which can result in significant cost savings for organizations \autocite{Singh2023}. 
 You don't have to pay for licenses, and you can run Linux on older hardware, which can extend the life of your machines.
+
 
 \subsection{Performance}
 Linux is known for its superior performance, which can lead to faster build times and improved productivity.
