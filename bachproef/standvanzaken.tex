@@ -24,30 +24,31 @@ This literature review dives deeper into this vast ocean, aiming to provide an o
 
 
 \section{The problem in today's software development}
-Today the typical development journey mainly focuses on how it will impact an organization instead of addressing how it affects the environment. Next to factors like improving time-to-market, reducing human error, debugging and making resource management more efficient, part of your infrastructure strategy should include ways to reduce your carbon footprint and impact on the planet /autocite{Brode2022}. 
+Today the typical development journey mainly focuses on how it will impact an organization instead of addressing how it affects the environment. Next to factors like improving time-to-market, reducing human error, debugging and making resource management more efficient, part of your infrastructure strategy should include ways to reduce your carbon footprint and impact on the planet 
+/autocite{Brode2022}. 
 To introduce why it is important to address the problem it helps to take a look at the impact of technology on the climate and planet. \textcite{Brode2022} states that a research in 2022 showed that there are already more than 16 million mobile devices in use. The average emission of one device is around 85kg of CO2 \autocite{Six2023}. Next to the carbon emission, the computing consumes an enormous amount of power. Data centers used around 416 terawatts in 2020 and the Bitcoin network consumed even more than all data centers combined \textcite{Brode2022}. 
  The mobile devices not only emit a lot of emission, they also create a lot of waste. Very little hardware is recycled and electronic waste comprises 70\% of all toxic waste. It is estimated on a total of 40 million tons annually. With the power consumption of data centers they also need cooling. Internet usage uses 3,000 liters of water per person each year and emits 2,000 kg of CO2 \autocite{Brode2022}.
 With these numbers only raising each year it is important every company contribute in creating a greener world. Software developers and DevOps teams can participate in this goal by applying best practices. 
 
 
 
-\section{Continous Integration and Continous Deployment}
+\section{Continuous Integration and Continuous Deployment}
 Continuous Integration and Deployment (CI/CD) processess have revolutionized software development by enabling teams to deliver high-quality code at a rapid pace \autocite{Sacolick2024}.
 However, as the software industry grapples with the challenges of sustainability, it is imperative to explore how software development, and subsequent, CI/CD practices can be optimized to align with eco-friendly principles.
 
-Continous Integration (CI) is a set of practices that automates the integration of small code changes and check them in to a version control repository \autocite{Sacolick2024}.
+Continuous Integration (CI) is a set of practices that automates the integration of small code changes and check them in to a version control repository \autocite{Sacolick2024}.
 By regularly merging code changes into a shared repository, developers can detect and resolve integration issues early in the development process because CI ensures that the each change is tested and verified by a build.
 This process does not only save time and money but also encourages developers to commit their code more frequently.
 This leads to a better collaboration between team members and a more cohesive and stable codebase.
 
-Continous Delivery (CD) follows up the CI process by automating the release of validated code to a repository \autocite{Hat2023}.
+Continuous Delivery (CD) follows up the CI process by automating the release of validated code to a repository \autocite{Hat2023}.
 Every stage in this process includes test automation and code quality checks, which should ensure that the code is always in a deployable state.
 This approach minimizes the risk of human error and ensures that the code is always ready to be deployed to production. 
 Developers can deliver software updates with confidence because the CD process ensures that bad code changes are caught early in the pipeline.
 
 Continuous Deployment (CD) is the next and last step in the CI/CD process.
-It reffers to the automation of the release of a developer's change to the production environment after passing through the CI/CD pipeline \autocite{Hat2023}.
-CD elminiates the need for manual intervention in the deployment process, which can lead to faster and more reliable deployments.
+It refers to the automation of the release of a developer's change to the production environment after passing through the CI/CD pipeline \autocite{Hat2023}.
+CD eliminates the need for manual intervention in the deployment process, which can lead to faster and more reliable deployments.
 
 This CI/CD process can make sure that small changes could go live in a matter of minutes, instead of days or weeks. 
 Because there is no manual intervention in the CI/CD process, the deployment relies heavily on well-designed test automation.
@@ -75,7 +76,7 @@ It provides a complete DevOps platform that enables teams to manage their code, 
 
 
 \subsection{Jetbrains TeamCity}
-Teramcity is a Java-based CI/CD server that is developed by JetBrains. It offers support for various programs like Docker, Jira, etc.
+Teamcity is a Java-based CI/CD server that is developed by JetBrains. It offers support for various programs like Docker, Jira, etc.
 Jetbrains Teamcity is the CI/CD tool that is used at Wolters Kluwer, the company where a part of this research is conducted.
 
 
@@ -95,7 +96,7 @@ By prioritizing clean code practices, that are summed up in the following subsec
 Every line of code requires some CPU time. That is why it is important to measure and analyze the performance of your code. This way you can identify slow and efficient parts and work on them to optimize your process \autocite{Ojeda}.
 
 \subsubsection{Choose the right data structures and algorithms}
-In this part it is recommended to choose the data structure and algorithm that suits best for your problem. For example using a hash table to storing and retrieving data quickly. Avoid using unnecessary structures such as creating copies of data \autocite{Ojeda}.
+In this part it is recommended to choose the data structure and algorithm that suits best for your problem. For example using a hash table to store and retrieve data quickly. Avoid using unnecessary structures such as creating copies of data \autocite{Ojeda}.
 
 \subsubsection{Use built-in or standard libraries}
 Another option to optimize your code is to use the built-in libraries that come with your programming language. These libraries often provide optimized functions such as the math library in Python to perform mathematical functions like calculating a square root \autocite{Ojeda}.
@@ -111,7 +112,7 @@ Educating users about the environmental impact of software development can help 
 It could promote writing more efficient code and applying best practices.
 
 
-\subsection{Lifecycle Management and Decommissioning}
+\subsection{Lifecycle Management and decommissioning}
 Sustainable automation extends to the entire lifecycle of infrastructure components. Another big part is the decommissioning and recycling of hardware. This includes responsible disposal or retired equipment and minimizing electronic waste, contributing to the overall sustainability of technology operations \autocite{Festus2024}.
 
 
@@ -139,13 +140,12 @@ Containers could be used to bundle the correct tool, version and other execution
 Not only the build can be automated, the testing tools and scripts can be packaged in separate containers.
 
 \subsubsection{Clean environment}
-A well packaged containers could not contain impurities that could affect the execution of a build. A build can’t affect a container and a same build will always get you the same result because of the creation of a new image for every build. 
+A well packaged container could not contain impurities that could affect the execution of a build. A build can’t affect a container and a same build will always get you the same result because of the creation of a new image for every build. 
 It is also possible to create a production grade container that reflects a clone of your production environment. This way the principle of continuous delivery is supported because code can be tested in a production environment before pushing it to production.
-By containerizing your resources you avoid the sharing of resources which could result in a slower process. This way no resources go to waste and there are always enough resources at any moment just like the automated scaling of the build agents
-Because every run is in a separate container it is isolated from other resources. This protects the current and other application from data breaches during the CI/CD process.
+By containerizing your resources you avoid the sharing of resources which could result in a slower process. This way no resources go to waste and there are always enough resources at any moment just like the automated scaling of the build agents. Because every run is in a separate container it is isolated from other resources. This protects the current and other application from data breaches during the CI/CD process.
 
 \subsubsection{Adoption and scaling with containers}
-With the use of containers team can easily adopt different tools and technologies with various customizations. Container based CI/CD solutions can be easily migrated to the cloud. In case your enterprise would want to switch to another CI/CD provider it would be a lot easier to move your containers instead of separate jobs. 
+With the use of containers, a team can easily adopt different tools and technologies with various customizations. Container based CI/CD solutions can be easily migrated to the cloud. In case your enterprise would want to switch to another CI/CD provider it would be a lot easier to move your containers instead of separate jobs. 
 It also makes scaling a lot easier. Containers can scale in a few seconds, while traditional infrastructures could take minutes to hours. You can scale them both vertically (add more power to it such as adding CPU power) and horizontally (add more containers) \autocite{Samant2021}. The only thing you need is a container orchestrator which makes the managing of your containers easier as well.
 
 
