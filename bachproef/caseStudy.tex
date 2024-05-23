@@ -35,13 +35,13 @@ By automating build agents, the CI/CD pipeline can be scaled up or down based on
 
 \subsection{Windows vs Linux}%
 \label{sub:windows-vs-linux}
-It was difficult to test this best practice. The reason behind this is that you need both operating systems. A build configuration that includes Powershell scripts can only be run on a Windows build agent. The same goes for Linux build agents. The best practice is to use Linux build agents as much as possible. This is because Linux build agents are more efficient and faster than Windows build agents.
+It was difficult to test this best practice. Wolters Kluwer uses build agents that run on Windows and Linux. Powershell script are easier to run on Windows and bash scripts are easier to run on Linux.
 
 
 \section{CPU Utilization}%
 \label{sec:cpu-utilization}
 
-The CPU utilization is shown in figure \ref{fig:cpu}. The clean up of the CI/CD environment hasn't reduced the CPU utilization clearly.
+The CPU utilization is shown in figure \ref{fig:cpu}. The time range goes from the beginning of the case study at Wolters Kluwer untill the end. The clean up of the CI/CD environment hasn't reduced the CPU utilization clearly.
 
 \begin{figure}[htbp]
     \centering
@@ -49,4 +49,40 @@ The CPU utilization is shown in figure \ref{fig:cpu}. The clean up of the CI/CD 
     \caption{CPU Usage}
     \label{fig:cpu}
 \end{figure}
+
+\section{Memory Usage}%
+\label{sec:memory-usage}
+
+The memory usage is shown in figure \ref{fig:memory}. The green line represents the memory usage of the Eden Space. In the Eden Space new objects are allocated. The yellow line represents the memory usage of the Old Gen, it is where long living objects are stored. We can see a decrease especially in the Old Gen memory usage. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{graphics/memory.png}
+    \caption{Memory Usage}
+    \label{fig:memory}
+\end{figure}
+
+\section{Build Metrics}%
+\label{sec:build-metrics}
+
+The amount of builds running at the same time is shown in figure \ref{fig:builds}. There isn't that much difference in the amount of builds running at the same time.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{graphics/builds running.png}
+    \caption{Builds running at the same time}
+    \label{fig:builds-running}
+\end{figure}
+
+The amount of queued builds at the same time is shown in figure \ref{fig:queued-builds}. The average decreased a little bit but there are still some peaks.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{graphics/builds queued.png}
+    \caption{Queued builds}
+    \label{fig:queued-builds}
+\end{figure}
+
+\section{Resource Utilization}%
+\label{sec:resource-utilization}
 
