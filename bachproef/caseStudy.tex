@@ -86,3 +86,26 @@ The amount of queued builds at the same time is shown in figure \ref{fig:queued-
 \section{Resource Utilization}%
 \label{sec:resource-utilization}
 
+The amount of database connections is shown in figure \ref{fig:db-connections}. The amount of database connections decreased a lot after the clean-up of the CI/CD pipeline.
+This leads to a lower power consumption, but also lower operating costs and a reduced wear and tear of the hardware.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{graphics/DB connections.png}
+    \caption{Database connections}
+    \label{fig:db-connections}
+\end{figure}
+
+\section{Infrastructure scalability}%
+\label{sec:infrastructure-scalability}
+
+The amount of agents connected is shown in figure \ref{fig:agents-connected}. 
+The amount of agents connected decreased a little bit after the clean-up of the CI/CD pipeline. 
+This leads to a lower power consumption, but also lower operating costs and a reduced wear and tear of the hardware.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{graphics/agents.png}
+    \caption{Agents connected}
+    \label{fig:agents-connected}
+\end{figure}
