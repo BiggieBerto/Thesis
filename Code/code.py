@@ -1,6 +1,10 @@
 import numpy as np
 import psutil
 import time
+import sys
+
+# Ensure Python can handle large integers
+sys.set_int_max_str_digits(0)  # Remove the limit on integer string conversion
 
 # Matrix multiplication function
 def cpu_intensive_matrix_task(matrix_size):
@@ -48,8 +52,10 @@ def measure_resource_usage(matrix_size, fibonacci_number):
     avg_cpu_usage = (cpu_usage_before + cpu_usage_during + cpu_usage_after) / 3
     avg_mem_usage = (mem_usage_before + mem_usage_during + mem_usage_after) / 3
 
+    # Print results with handling for large Fibonacci results
+    fib_result_str = f"{fib_result:.2e}"  # Scientific notation
     print(f"Matrix Operation Result: {matrix_result[0][0]}")
-    print(f"Fibonacci Result (limited): {fib_result}")
+    print(f"Fibonacci Result (scientific notation): {fib_result_str}")
     print(f"Total Time taken: {matrix_time + fib_time} seconds")
     print(f"Average CPU usage: {avg_cpu_usage}%")
     print(f"Average Memory usage: {avg_mem_usage} MB")
@@ -58,7 +64,7 @@ def measure_resource_usage(matrix_size, fibonacci_number):
 
 # Adjust matrix size and Fibonacci number for longer execution
 matrix_size = 2000  # Adjust this size to control the computation time
-fibonacci_number = 30000  # Increased Fibonacci number to ensure longer computation
+fibonacci_number = 5000  # Reduced Fibonacci number to avoid overflow
 
 # Collect metrics
-cpu, memory, time_taken = measure_resource_usage(matrix_size, fibonacci_number)
+cpu, memory, time_taken = measure_resource_usage(matrix_size, fibonacci_number
