@@ -1,4 +1,6 @@
 import numpy as np
+import psutil
+import time
 
 def cpu_intensive_task():
     matrix_size = 500
