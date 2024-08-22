@@ -67,4 +67,4 @@ matrix_size = 2000  # Adjust this size to control the computation time
 fibonacci_number = 5000  # Reduced Fibonacci number to avoid overflow
 
 # Collect metrics
-cpu, memory, time_taken = measure_resource_usage(matrix_size, fibonacci_number
+cpu, memory, time_taken = measure_resource_usage(matrix_size, fibonacci_number)
