@@ -46,7 +46,7 @@ def measure_resource_usage(matrix_size, fibonacci_number):
     avg_mem_usage = sum(mem_usage) / len(mem_usage)
 
     print(f"Matrix Operation Result: {matrix_result[0][0]}")
-    print(f"Fibonacci Result: {fib_result}")
+    print(f"Fibonacci Result (limited): {fib_result}")
     print(f"Total Time taken: {matrix_time + fib_time} seconds")
     print(f"Average CPU usage: {avg_cpu_usage}%")
     print(f"Average Memory usage: {avg_mem_usage} MB")
@@ -55,7 +55,8 @@ def measure_resource_usage(matrix_size, fibonacci_number):
 
 # Adjust matrix size and Fibonacci number for longer execution
 matrix_size = 1000  # Adjust this size to control the computation time
-fibonacci_number = 100000  # Adjust this number to control the computation time
+fibonacci_number = 10000  # Adjust this number to control the computation time
 
 # Collect metrics
 cpu, memory, time_taken = measure_resource_usage(matrix_size, fibonacci_number)
+
