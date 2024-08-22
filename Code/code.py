@@ -43,6 +43,7 @@ def measure_resource_usage(matrix_size, fibonacci_number):
     fib_time = time.time() - start_time
     
     # Measure CPU and Memory usage during the Fibonacci task
+    time.sleep(2)  # Ensure CPU is not idle
     cpu_usage.append(process.cpu_percent(interval=2))  # Measure for 2 seconds
     mem_usage.append(process.memory_info().rss / 1024 / 1024)  # Memory usage in MB
 
@@ -59,7 +60,7 @@ def measure_resource_usage(matrix_size, fibonacci_number):
 
 # Adjust matrix size and Fibonacci number for longer execution
 matrix_size = 1000  # Adjust this size to control the computation time
-fibonacci_number = 5000  # Adjust this number to control the computation time
+fibonacci_number = 20000  # Increased Fibonacci number to ensure longer computation
 
 # Collect metrics
 cpu, memory, time_taken = measure_resource_usage(matrix_size, fibonacci_number)
