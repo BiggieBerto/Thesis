@@ -32,7 +32,6 @@ def measure_resource_usage(matrix_size, fibonacci_number):
     # Busy-wait loop to ensure CPU is in use
     busy_start_time = time.time()
     while time.time() - busy_start_time < 5:  # Keep the CPU busy for 5 seconds
-        pass
 
     # Start Fibonacci calculation
     start_time = time.time()
@@ -58,7 +57,6 @@ fibonacci_number = 100000  # Adjust this number to control the computation time
 
 # Collect metrics
 cpu, memory, time_taken = measure_resource_usage(matrix_size, fibonacci_number)
-        pass
     
     # Start Fibonacci calculation
     start_time = time.time()
