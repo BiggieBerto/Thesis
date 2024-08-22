@@ -1,47 +1,34 @@
-import os
-import time
-import psutil
+import numpy as np
 
-# Function to calculate the Fibonacci sequence
-def fibonacci(n):
-    if n <= 0:
-        return 0
-    elif n == 1:
-        return 1
-    else:
-        return fibonacci(n-1) + fibonacci(n-2)
+def cpu_intensive_task():
+    matrix_size = 500
+    a = np.random.rand(matrix_size, matrix_size)
+    b = np.random.rand(matrix_size, matrix_size)
+    result = np.dot(a, b)
+    return result
 
-# Function to perform disk I/O
-def disk_io_test(file_name, size_in_mb):
-    data = os.urandom(1024 * 1024)  # 1 MB of random data
-    with open(file_name, 'wb') as f:
-        for _ in range(size_in_mb):
-            f.write(data)
-    with open(file_name, 'rb') as f:
-        f.read()
-
-# Function to perform memory allocation
-def memory_allocation_test(size_in_mb):
-    data = []
-    for _ in range(size_in_mb):
-        data.append(os.urandom(1024 * 1024))  # 1 MB of random data
-    time.sleep(5)  # Keep the memory allocated for a while
-
-if __name__ == "__main__":
-    # Measure CPU usage by calculating Fibonacci
+# Measure resource usage during this task
+def measure_resource_usage():
+    process = psutil.Process()
+    cpu_usage = []
+    mem_usage = []
+    
     start_time = time.time()
-    fib_number = fibonacci(30)  # Change the number to increase/decrease CPU load
+    result = cpu_intensive_task()
+    cpu_usage.append(process.cpu_percent(interval=1))  # Increase interval to 1 second
+    mem_usage.append(process.memory_info().rss / 1024 / 1024)  # Memory usage in MB
+    
     end_time = time.time()
-    print(f"Fibonacci result: {fib_number}, Time taken: {end_time - start_time} seconds")
+    time_taken = end_time - start_time
+    avg_cpu_usage = sum(cpu_usage) / len(cpu_usage)
+    avg_mem_usage = sum(mem_usage) / len(mem_usage)
+    
+    print(f"CPU Intensive Task Result: {result[0][0]}")
+    print(f"Time taken: {time_taken} seconds")
+    print(f"Average CPU usage: {avg_cpu_usage}%")
+    print(f"Average Memory usage: {avg_mem_usage} MB")
 
-    # Measure Disk I/O
-    disk_io_test("test_file.bin", 100)  # 100 MB file
-    os.remove("test_file.bin")
+    return avg_cpu_usage, avg_mem_usage, time_taken
 
-    # Measure Memory usage
-    memory_allocation_test(500)  # 500 MB memory allocation
-
-    # Print resource usage
-    process = psutil.Process(os.getpid())
-    print(f"CPU usage: {process.cpu_percent(interval=1)}%")
-    print(f"Memory usage: {process.memory_info().rss / 1024 / 1024} MB")
+# Collect metrics
+cpu, memory, time_taken = measure_resource_usage()
