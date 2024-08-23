@@ -1,27 +1,20 @@
 import numpy as np
 import psutil
 import time
-from concurrent.futures import ThreadPoolExecutor
+from multiprocessing import Process
 
-# Ensure Python can handle large integers
-import sys
-sys.set_int_max_str_digits(0)  # Remove the limit on integer string conversion
-
-# Matrix multiplication function
 def cpu_intensive_matrix_task(matrix_size):
     a = np.random.rand(matrix_size, matrix_size)
     b = np.random.rand(matrix_size, matrix_size)
     result = np.dot(a, b)
     return result
 
-# Fibonacci calculation function
 def fibonacci(n):
     a, b = 0, 1
     for _ in range(n):
         a, b = b, a + b
     return a
 
-# Measure resource usage
 def measure_resource_usage(matrix_size, fibonacci_number):
     process = psutil.Process()
     
@@ -32,21 +25,22 @@ def measure_resource_usage(matrix_size, fibonacci_number):
     cpu_usage_before = process.cpu_percent(interval=1)
     mem_usage_before = process.memory_info().rss / 1024 / 1024  # Memory usage in MB
 
-    # Start matrix and Fibonacci tasks concurrently
-    with ThreadPoolExecutor() as executor:
-        future_matrix = executor.submit(cpu_intensive_matrix_task, matrix_size)
-        future_fib = executor.submit(fibonacci, fibonacci_number)
-        
-        # Wait for tasks to start
-        time.sleep(5)  # Wait a bit to let the tasks really start running
-        
-        # Record CPU and memory usage after tasks started
-        cpu_usage_during = process.cpu_percent(interval=1)
-        mem_usage_during = process.memory_info().rss / 1024 / 1024  # Memory usage in MB
-        
-        # Wait for tasks to complete
-        matrix_result = future_matrix.result()
-        fib_result = future_fib.result()
+    # Start matrix and Fibonacci tasks using multiprocessing
+    p1 = Process(target=cpu_intensive_matrix_task, args=(matrix_size,))
+    p2 = Process(target=fibonacci, args=(fibonacci_number,))
+    
+    p1.start()
+    p2.start()
+    
+    # Wait for tasks to start
+    time.sleep(5)  # Wait a bit to let the tasks really start running
+    
+    # Record CPU and memory usage during tasks
+    cpu_usage_during = process.cpu_percent(interval=1)
+    mem_usage_during = process.memory_info().rss / 1024 / 1024  # Memory usage in MB
+    
+    p1.join()
+    p2.join()
     
     # Record final CPU and memory usage
     time.sleep(2)  # Wait for CPU usage to settle
@@ -58,8 +52,8 @@ def measure_resource_usage(matrix_size, fibonacci_number):
     avg_mem_usage = (mem_usage_before + mem_usage_during + mem_usage_after) / 3
 
     # Print results with handling for large Fibonacci results
-    fib_digits = len(str(fib_result))  # Number of digits in the Fibonacci result
-    print(f"Matrix Operation Result: {matrix_result[0][0]}")
+    fib_digits = len(str(fibonacci(fibonacci_number)))  # Number of digits in the Fibonacci result
+    print(f"Matrix Operation Result: Completed")
     print(f"Fibonacci Result has {fib_digits} digits")  # Print digit count instead of result
     print(f"Average CPU usage: {avg_cpu_usage}%")
     print(f"Average Memory usage: {avg_mem_usage} MB")
@@ -72,4 +66,5 @@ fibonacci_number = 1500  # Increased Fibonacci number to make computation more i
 
 # Collect metrics
 cpu, memory = measure_resource_usage(matrix_size, fibonacci_number)
+
 
