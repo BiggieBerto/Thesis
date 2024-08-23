@@ -17,7 +17,13 @@ To start my comparative analysis I had some requirements such as a TeamCity inst
 For my agents I used two virtual machines from Azure to ensure that the agents were provided by the same cloud provider and also to avoid other factors that could influence the results. For the Windows agent I used Windows 10 and for the Linux agent I used Ubuntu 20.04. The agents were configured with the same specifications to ensure a fair comparison. TeamCity Cloud came with some pre-installed agents but this came with a limited amount of builds and virtual machines made it possible to have more control over the agents.
 
 \section{Builds}
-To compare the agents I created a build configuration for each operating system so it was easy to seperate the right builds. The builds were the same for both agents. The first build configuration ran on the agents was a matrix operation. This would need some CPU power and memory to run. The second build configuration was a matrix multiplication. 
+To compare the agents I created a build configuration for each operating system so it was easy to seperate the right builds. The builds were the same for both agents. The first build configuration ran on the agents was a matrix operation. This would need some CPU power and memory to run. The second build configuration was a matrix multiplication. In following image you can see the dashboard of the TeamCity instance with the two build configurations.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{graphics/TeamCity.png}
+\caption{TeamCity dashboard with the two build configurations}
+\end{figure}
 
 \section{Metrics}
 The two most important factors in terms of energy-efficiency are the CPU usage and the memory usage. The used memory is measured by implementing it in the build configuration. The CPU usage was a lot more difficult to measure. Through a script that I manually started before running the build it measured the CPU usage for the following 60 seconds. This way, it was possible to measure the average CPU usage an interval where the build was running. By doing this for every build, it was possible to compare the CPU usage of the Linux and Windows agent.
