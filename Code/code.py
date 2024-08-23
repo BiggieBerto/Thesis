@@ -1,12 +1,13 @@
 import numpy as np
 import psutil
 import time
-from multiprocessing import Process, cpu_count
+from concurrent.futures import ThreadPoolExecutor
 
 # Ensure Python can handle large integers
 import sys
 sys.set_int_max_str_digits(0)  # Remove the limit on integer string conversion
 
+# Matrix multiplication function
 def cpu_intensive_matrix_task(matrix_size):
     print("Starting matrix multiplication")
     a = np.random.rand(matrix_size, matrix_size)
@@ -15,6 +16,7 @@ def cpu_intensive_matrix_task(matrix_size):
     print("Finished matrix multiplication")
     return result
 
+# Fibonacci calculation function
 def fibonacci(n):
     print("Starting Fibonacci calculation")
     a, b = 0, 1
@@ -23,6 +25,7 @@ def fibonacci(n):
     print("Finished Fibonacci calculation")
     return a
 
+# Measure resource usage
 def measure_resource_usage(matrix_size, fibonacci_number):
     process = psutil.Process()
     
@@ -33,15 +36,14 @@ def measure_resource_usage(matrix_size, fibonacci_number):
     cpu_usage_before = process.cpu_percent(interval=1)
     mem_usage_before = process.memory_info().rss / 1024 / 1024  # Memory usage in MB
 
-    # Start matrix and Fibonacci tasks using multiprocessing
-    p1 = Process(target=cpu_intensive_matrix_task, args=(matrix_size,))
-    p2 = Process(target=fibonacci, args=(fibonacci_number,))
-    
-    p1.start()
-    p2.start()
-    
-    p1.join()
-    p2.join()
+    # Start matrix and Fibonacci tasks concurrently
+    with ThreadPoolExecutor() as executor:
+        future_matrix = executor.submit(cpu_intensive_matrix_task, matrix_size)
+        future_fib = executor.submit(fibonacci, fibonacci_number)
+        
+        # Wait for tasks to complete
+        matrix_result = future_matrix.result()
+        fib_result = future_fib.result()
     
     # Record CPU and memory usage after tasks
     time.sleep(2)  # Wait for a bit to let CPU usage settle
@@ -53,8 +55,8 @@ def measure_resource_usage(matrix_size, fibonacci_number):
     avg_mem_usage = (mem_usage_before + mem_usage_after) / 2
 
     # Print results with handling for large Fibonacci results
-    fib_digits = len(str(fibonacci(fibonacci_number)))  # Number of digits in the Fibonacci result
-    print(f"Matrix Operation Result: Completed")
+    fib_digits = len(str(fib_result))  # Number of digits in the Fibonacci result
+    print(f"Matrix Operation Result: {matrix_result[0][0]}")
     print(f"Fibonacci Result has {fib_digits} digits")  # Print digit count instead of result
     print(f"Average CPU usage: {avg_cpu_usage}%")
     print(f"Average Memory usage: {avg_mem_usage} MB")
