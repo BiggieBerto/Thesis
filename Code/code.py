@@ -1,41 +1,33 @@
 import time
-import math
+import numpy as np
+import psutil
+import os
 
-def is_prime(n):
-    if n <= 1:
-        return False
-    if n <= 3:
-        return True
-    if n % 2 == 0 or n % 3 == 0:
-        return False
-    i = 5
-    while i * i <= n:
-        if n % i == 0 or n % (i + 2) == 0:
-            return False
-        i += 6
-    return True
+def measure_memory():
+    process = psutil.Process(os.getpid())
+    mem_info = process.memory_info()
+    return mem_info.rss / (1024 * 1024)  # Convert to MB
 
-def calculate_primes(limit):
-    primes = []
-    for num in range(2, limit):
-        if is_prime(num):
-            primes.append(num)
-    return primes
+def matrix_multiplication(size):
+    A = np.random.rand(size, size)
+    B = np.random.rand(size, size)
+    C = np.dot(A, B)
 
 def main():
+    size = 1000  # Change this size for more computation
+    print(f"Matrix size: {size}x{size}")
+
     start_time = time.time()
     
-    # Change the limit to a larger number if you need more computation
-    limit = 100000
-    primes = calculate_primes(limit)
-    
-    end_time = time.time()
-    elapsed_time = end_time - start_time
-    
-    print(f"Calculated {len(primes)} primes up to {limit}.")
+    initial_memory = measure_memory()
+    matrix_multiplication(size)
+    final_memory = measure_memory()
+
+    elapsed_time = time.time() - start_time
+    memory_usage = final_memory - initial_memory
+
     print(f"Elapsed time: {elapsed_time:.2f} seconds.")
+    print(f"Memory usage: {memory_usage:.2f} MB")
 
 if __name__ == "__main__":
     main()
-
-
