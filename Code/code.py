@@ -25,6 +25,9 @@ def fibonacci(n):
 def measure_resource_usage(matrix_size, fibonacci_number):
     process = psutil.Process()
     
+    # Stabilize measurement
+    time.sleep(2)  # Give time for initial measurement to stabilize
+
     # Record initial CPU and memory usage
     cpu_usage_before = process.cpu_percent(interval=1)
     mem_usage_before = process.memory_info().rss / 1024 / 1024  # Memory usage in MB
@@ -39,6 +42,7 @@ def measure_resource_usage(matrix_size, fibonacci_number):
         fib_result = future_fib.result()
     
     # Record CPU and memory usage after tasks
+    time.sleep(1)  # Wait for a bit to let CPU usage settle
     cpu_usage_after = process.cpu_percent(interval=1)
     mem_usage_after = process.memory_info().rss / 1024 / 1024  # Memory usage in MB
 
@@ -61,4 +65,3 @@ fibonacci_number = 1500  # Increased Fibonacci number to make computation more i
 
 # Collect metrics
 cpu, memory = measure_resource_usage(matrix_size, fibonacci_number)
-
