@@ -9,20 +9,16 @@ sys.set_int_max_str_digits(0)  # Remove the limit on integer string conversion
 
 # Matrix multiplication function
 def cpu_intensive_matrix_task(matrix_size):
-    print("Starting matrix multiplication")
     a = np.random.rand(matrix_size, matrix_size)
     b = np.random.rand(matrix_size, matrix_size)
     result = np.dot(a, b)
-    print("Finished matrix multiplication")
     return result
 
 # Fibonacci calculation function
 def fibonacci(n):
-    print("Starting Fibonacci calculation")
     a, b = 0, 1
     for _ in range(n):
         a, b = b, a + b
-    print("Finished Fibonacci calculation")
     return a
 
 # Measure resource usage
@@ -30,7 +26,7 @@ def measure_resource_usage(matrix_size, fibonacci_number):
     process = psutil.Process()
     
     # Stabilize measurement
-    time.sleep(2)  # Give time for initial measurement to stabilize
+    time.sleep(2)  # Ensure initial CPU usage is stable
 
     # Record initial CPU and memory usage
     cpu_usage_before = process.cpu_percent(interval=1)
@@ -41,18 +37,25 @@ def measure_resource_usage(matrix_size, fibonacci_number):
         future_matrix = executor.submit(cpu_intensive_matrix_task, matrix_size)
         future_fib = executor.submit(fibonacci, fibonacci_number)
         
+        # Wait for tasks to start
+        time.sleep(5)  # Wait a bit to let the tasks really start running
+        
+        # Record CPU and memory usage after tasks started
+        cpu_usage_during = process.cpu_percent(interval=1)
+        mem_usage_during = process.memory_info().rss / 1024 / 1024  # Memory usage in MB
+        
         # Wait for tasks to complete
         matrix_result = future_matrix.result()
         fib_result = future_fib.result()
     
-    # Record CPU and memory usage after tasks
-    time.sleep(2)  # Wait for a bit to let CPU usage settle
+    # Record final CPU and memory usage
+    time.sleep(2)  # Wait for CPU usage to settle
     cpu_usage_after = process.cpu_percent(interval=1)
     mem_usage_after = process.memory_info().rss / 1024 / 1024  # Memory usage in MB
 
     # Calculate average CPU usage
-    avg_cpu_usage = (cpu_usage_before + cpu_usage_after) / 2
-    avg_mem_usage = (mem_usage_before + mem_usage_after) / 2
+    avg_cpu_usage = (cpu_usage_before + cpu_usage_during + cpu_usage_after) / 3
+    avg_mem_usage = (mem_usage_before + mem_usage_during + mem_usage_after) / 3
 
     # Print results with handling for large Fibonacci results
     fib_digits = len(str(fib_result))  # Number of digits in the Fibonacci result
@@ -69,3 +72,4 @@ fibonacci_number = 1500  # Increased Fibonacci number to make computation more i
 
 # Collect metrics
 cpu, memory = measure_resource_usage(matrix_size, fibonacci_number)
+
