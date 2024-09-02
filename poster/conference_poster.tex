@@ -50,11 +50,19 @@ Through comprehensive data collection, best practice implementation, and a compa
 
 % De {\LaTeX} figure-omgeving bepaalt zelf waar een afbeelding komt en dat is meestal niet op de plek in de tekst waar de figure-omgeving gedefinieerd wordt. Als je wilt forceren dat afbeeldingen toch in de flow van de tekst blijven, dan kan je dat zoals hieronder:
 
-\begin{center}
-  \captionsetup{type=figure}
-  \includegraphics[width=1.0\linewidth]{./bachproef/graphics/Data_comparison.png}
-  \captionof{figure}{Example of data collected in the comparative analysis}
-\end{center}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|l|l|l|l|}
+  \hline
+  Build nr & Build time & CPU usage & Memory usage \\ \hline
+  1        & 12s        & 46,39\%   & 72,00       \\ \hline
+  2        & 12s        & 41,51\%   & 72,19       \\ \hline
+  3        & 12s        & 45,06\%   & 72,00       \\ \hline
+  4        & 12s        & 35,74\%   & 72,13       \\ \hline
+  5        & 12s        & 35,91\%   & 72,00       \\ \hline
+  \end{tabular}
+  \caption{The result of data collection with generated code}
+  \end{table}
 
 % Let er wel op dat dit tot problemen met bladschikking kan leiden.
 
